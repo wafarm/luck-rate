@@ -22,6 +22,7 @@ impl Random {
         self.next(32)
     }
 
+    #[allow(unused_assignments)]
     pub fn bounded_next_i32(&mut self, origin: i32, bound: i32) -> i32 {
         let mut r = self.next_i32();
         if origin < bound {
