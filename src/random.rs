@@ -14,7 +14,7 @@ impl Random {
     }
 
     fn next(&mut self, bits: i32) -> i32 {
-        self.seed = (self.seed * MULTIPLIER + ADDEND) & ((1i64 << 48) - 1);
+        self.seed = (self.seed * MULTIPLIER + ADDEND) & MASK;
         ((self.seed as u64) >> (48 - bits)) as i32
     }
 
